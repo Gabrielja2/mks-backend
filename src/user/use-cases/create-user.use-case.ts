@@ -1,4 +1,4 @@
-import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
+import { ConflictException, Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { User } from '../entities/user.entity';
 import { IUserRepository } from '../user.repository';
@@ -19,10 +19,8 @@ export class CreateUserUseCase implements ICreateUserUseCase {
 
   async execute(input: CreateUserDto) {
     const emailAlreadyExists = await this.userRepository.findOne(input.email);
-    console.log('emailAlreadyExists', emailAlreadyExists);
 
-    if (emailAlreadyExists)
-      throw new UnauthorizedException('Email already exists');
+    if (emailAlreadyExists) throw new ConflictException('Email already exists');
 
     const user = new User(input).validate(input);
     user.password = await this.cryptoAdapter.hash(input.password);
