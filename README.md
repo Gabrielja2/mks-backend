@@ -1,73 +1,166 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Sejam bem vindos ao repositório backend do projeto mks-backend!
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este projeto foi completamente desenvolvido em TypeScript, utilizando Nest.js, TypeOrm,
+Postgres e outras bibliotecas auxiliares como, jsonwebtoken,
+bcryptjs, entre algumas outras. 🚀
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Foi desenvolvido seguindo os pilares da programação orientada a
+objeto (POO), e seguindo alguns padrões de projeto e arquitetura, como separação
+dos casos de uso em use-cases (apesar de não ter separdo em intenções menores, por exemplo na rota de atualização, atualizar cada campo separadamente para cada intenção de um caso de uso).
 
-## Description
+Sou desenvolvedor com pouco mais de 2 anos de estudos e 6 meses de experiência de mercado como dev back-end. Referente as tecnologias utilizadas nesse projeto, possuo mais de 1 ano praticando projetos em nestjs, nodejs, expressjs, postgres, typeORM, inclusive são tecnologias que utilizei bastante no meu último trabalho como dev.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Infelizmente ficou pendente o deploy e criar alguns testes para aprensentar, devido ao tempo, fui ver a mensagem do desafio no dia 10/05, ontem.... acabei ficando com o tempo curto, mas criar tests é algo que sempre pratiquei, inclusive gosto bastante de testar minhas aplicações backend e seguir boas práticas de desenvolvimento.
 
-## Installation
+# Orientações
 
-```bash
-$ npm install
-```
+## Antes de começar a desenvolver
 
-## Running the app
+👀 Leia essa parte atentamente, pois aqui você encontrará informações
+importantes para rodar corretamente o projeto.
 
-```bash
-# development
-$ npm run start
+<details>
+<summary><strong> 🔰 Instruções </strong></summary><br />
 
-# watch mode
-$ npm run start:dev
+1. Clone o repositório
 
-# production mode
-$ npm run start:prod
-```
+- `git clone https://github.com/Gabrielja2/fiter-back-end.git`
 
-## Test
+2. Entre na pasta do repositório que você acabou de clonar:
 
-```bash
-# unit tests
-$ npm run test
+- `cd pasta-do-repositório`
 
-# e2e tests
-$ npm run test:e2e
+3. Instale as dependências
 
-# test coverage
-$ npm run test:cov
-```
+- `npm install`
 
-## Support
+4. Configure as variáveis de ambiente, é <strong>Obrigatório</strong> para
+   funcionar corretamente:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- Confira o arquivo .env na raiz do projeto e preencha com as variáveis de
+  ambiente caso seja necessário, mas ja vou deixar elas preenchidas nesse
+  exemplo, lembre que é obrigatório algumas dessas váriaveis para conseguir
+  rodar o servidor como PORT, eu utilizei a PORT=`3000` mas pode ser qualquer
+  uma que não esteja sendo usada na sua máquina, vou deixa um arquivo env.ts preenchido para utilizar o no .env
 
-## Stay in touch
+6. Dentro do diretório MKS-BACKEND, abra um terminal, suba o
+   docker-compose e depois no mesmo terminal rode o projeto:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- `docker-compose up`
 
-## License
+- `npm run start:dev`
 
-Nest is [MIT licensed](LICENSE).
+</details><br />
+
+# Rotas
+
+## Swagger
+
+Rota com todas as informações dos endpoints, requests e responses.
+
+<details>
+<summary><strong>Rota do Swagger</strong></summary>
+
+- Método: POST
+- URL: http://localhost:3000/api
+- Descrição: Informações com todos os endpoints da API.
+
+  </details><br />
+
+## Autenticação
+
+São as rotas para logar ou registrar um novo usuário
+
+<details>
+<summary><strong>Rota de Login</strong></summary>
+
+- Método: POST
+- URL: http://localhost:3000/auth
+- Descrição: Realiza o login de um usuário cadastrado.
+- Parâmetros de entrada:
+  - email: String (obrigatório) - E-mail do usuário.
+  - password: String (obrigatório) - Senha do usuário.
+- Resposta de sucesso:
+  - Código: 200
+  - Corpo: Objeto contendo o token.
+  </details><br />
+
+<details>
+<summary><strong>Rota de Registro</strong></summary>
+
+- Método: POST
+- URL: http://localhost:3000/users
+- Descrição: Registra um novo usuário.
+- Parâmetros de entrada:
+  - name: String (obrigatório) - Nome do usuário.
+  - email: String (obrigatório) - E-mail do usuário.
+  - password: String (obrigatório) - Senha do usuário.
+- Resposta de sucesso:
+  - Código: 201
+  - Corpo: Entidade do usuário criado.
+  </details><br /><br />
+
+# ⚠️ Rotas Protegidas por Autenticação (/movies)
+
+<details>
+<summary><strong>Rota de Registro de um filme</strong></summary>
+
+- Método: POST
+- URL: http://localhost:3000/movies
+- Descrição: Registra um novo filme.
+- Exemplo dos parâmetros de entrada: {
+  "name": "nome",
+  "description: "descrição",
+  "category": "categoria",
+  }
+- Resposta de sucesso:
+  - Código: 201
+  - Corpo: entidade de Movie criada.
+  </details><br />
+
+<details>
+<summary><strong>Rota de busca de um filme</strong></summary>
+
+- Método: GET
+- URL: http://localhost:3000/movies/:id
+- Descrição: Listaum filme.
+- Resposta de sucesso:
+  - Código: 200
+  - Corpo: entidade de um filme encontrado pelo id.
+  </details><br />
+
+<details>
+<summary><strong>Rota de busca de varios filmes</strong></summary>
+
+- Método: GET
+- URL: http://localhost:3000/movies
+- Descrição: Lista as configurações do sorteio.
+- Resposta de sucesso:
+
+  - Código: 200
+  - Corpo: Um array com as entidades dos filmes encontrados.
+  </details><br />
+
+<details>
+<summary><strong>Rota de atualização de um filme</strong></summary>
+
+- Método: PATCH
+- URL: http://localhost:3000/movies/:id
+- Descrição: Atualiza um filme.
+- Resposta de sucesso:
+
+  - Código: 200
+  - Corpo: Mensagem de atualização bem sucedida.
+  </details><br />
+
+<details>
+<summary><strong>Rota de esclusão de um filme</strong></summary>
+
+- Método: DELETE
+- URL: http://localhost:3000/movies/:id
+- Descrição: Deleta um filme.
+- Resposta de sucesso:
+
+  - Código: 200
+  - Corpo: Mensagem de exclusão bem sucedida.
+  </details><br />

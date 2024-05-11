@@ -4,13 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN ["npm", "i"] 
+RUN npm install
 
 COPY . .
 
-RUN chown node:node /app
+EXPOSE 3333
 
-USER node
-
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "start"]
   
