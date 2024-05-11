@@ -1,0 +1,63 @@
+###
+Post http://localhost:3000/auth
+Content-Type: application/json
+
+{
+    "email": "biel@email.com",
+    "password": "Gabriel1"
+}
+
+###
+Get http://localhost:3000/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+
+###
+Get http://localhost:3000/movies/b0925770-3b77-4179-864c-068473aa987b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+
+###
+Post http://localhost:3000/movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+
+
+{
+    "name": "a",
+    "description": "Filme de terror com uma boneca versão 2",
+    "category": "sa"
+}
+
+###
+Patch http://localhost:3000/movies/af187404-4aca-43e4-893f-4cac513b0e86
+Content-Type: application/json
+
+{
+    "name": "Vovoz1212121ona",
+    "category": "Comed212121ia"
+}
+
+
+###
+Delete http://localhost:3000/movies/af187404-4aca-43e4-893f-4cac513b0e86
+Content-Type: application/json
+
+
+
+
+
+
+
+
+###
+Get http://localhost:3000/users/gasbr1siel@email.com
+
+###
+Post http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "email": "biel@email.com",
+    "name": "Gabriel",
+    "password": "Gabriel1"
+}
+

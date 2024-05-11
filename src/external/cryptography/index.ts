@@ -1,0 +1,15 @@
+import { ICryptographyAdapter } from '@/ports';
+import bcryptjs from 'bcryptjs';
+
+export class CryptographyAdapter implements ICryptographyAdapter {
+  private readonly bcryptjs = bcryptjs;
+  private readonly salt: number = 12;
+
+  async hash(value: string): Promise<string> {
+    return await this.bcryptjs.hash(value, this.salt);
+  }
+
+  async compareHash(hash: string, valueToBeCompared: string): Promise<boolean> {
+    return await this.bcryptjs.compare(valueToBeCompared, hash);
+  }
+}
