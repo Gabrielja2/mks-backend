@@ -8,6 +8,7 @@ import {
   Patch,
   Inject,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import {
   ICreateMovieUseCase,
@@ -18,8 +19,10 @@ import {
 } from '@/movies/use-cases';
 import { CreateMovieDto, UpdateMovieDto } from './dto';
 import { JwtGuard } from '@/auth/jwt-guard';
+import { CacheInterceptor, CacheKey, CacheTTL } from '@nestjs/cache-manager';
 
 @UseGuards(JwtGuard)
+@UseInterceptors(CacheInterceptor)
 @Controller('movies')
 export class MoviesController {
   constructor(
@@ -40,6 +43,8 @@ export class MoviesController {
     return this.createMovieUseCase.execute(createMovieDto);
   }
 
+  @CacheTTL(60 * 1000)
+  @CacheKey('movies')
   @Get()
   findAll() {
     return this.findAllMoviesUseCase.execute();

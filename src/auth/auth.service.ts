@@ -6,7 +6,7 @@ import { IUserRepository } from '@/user/user.repository';
 import { User } from '@/user/entities/user.entity';
 
 export interface IAuthService {
-  login(input: LoginUserDto): Promise<string>;
+  login(input: LoginUserDto): Promise<{ token: string }>;
   validateCredentials(input: LoginUserDto): void;
 }
 
@@ -26,13 +26,15 @@ export class AuthService implements IAuthService {
   async login(input: LoginUserDto) {
     const user = await this.validateCredentials(input);
 
-    return this.authAdapter.createJsonWebToken(
+    const token = this.authAdapter.createJsonWebToken(
       {
         sub: user.id,
         email: input.email,
       },
       JWT_EXPIRE_IN_SECONDS,
     );
+
+    return { token };
   }
 
   async validateCredentials(input: LoginUserDto): Promise<User> {

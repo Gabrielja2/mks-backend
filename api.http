@@ -9,22 +9,22 @@ Content-Type: application/json
 
 ###
 Get http://localhost:3000/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZjk3ZWVmYi1kNTY2LTQyZmItYTgyMi0xNzNjMjBhNjYxZjciLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDQ1NDQ3LCJleHAiOjE3MTU1MzE4NDd9.ECOZGGo1ECfHYKPRRPeFgNFGm8tLT3mq1RCaZRBP4Cc
 
 ###
 Get http://localhost:3000/movies/b0925770-3b77-4179-864c-068473aa987b1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZjk3ZWVmYi1kNTY2LTQyZmItYTgyMi0xNzNjMjBhNjYxZjciLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDQ1NDQ3LCJleHAiOjE3MTU1MzE4NDd9.ECOZGGo1ECfHYKPRRPeFgNFGm8tLT3mq1RCaZRBP4Cc
 
 ###
 Post http://localhost:3000/movies
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MGU4ZmQ1MS04YTVhLTRiN2EtYjFlZC1lZjdhMmE5N2MyYWQiLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDM3ODc5LCJleHAiOjE3MTU1MjQyNzl9.bNalzFgEZZ0xMfHDdzSVrc1kY3RJ1kipAZrvaAjDTpA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZjk3ZWVmYi1kNTY2LTQyZmItYTgyMi0xNzNjMjBhNjYxZjciLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDQ1NDQ3LCJleHAiOjE3MTU1MzE4NDd9.ECOZGGo1ECfHYKPRRPeFgNFGm8tLT3mq1RCaZRBP4Cc
 
 
 {
-    "name": "a",
+    "name": "Anabelle 2",
     "description": "Filme de terror com uma boneca versão 2",
-    "category": "sa"
+    "category": "Terror"
 }
 
 ###
@@ -38,9 +38,9 @@ Content-Type: application/json
 
 
 ###
-Delete http://localhost:3000/movies/af187404-4aca-43e4-893f-4cac513b0e86
+Delete http://localhost:3000/movies/587507d7-c59c-43c1-a8c6-fcc76e3d47c3
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZjk3ZWVmYi1kNTY2LTQyZmItYTgyMi0xNzNjMjBhNjYxZjciLCJlbWFpbCI6ImJpZWxAZW1haWwuY29tIiwiaWF0IjoxNzE1NDQ1NDQ3LCJleHAiOjE3MTU1MzE4NDd9.ECOZGGo1ECfHYKPRRPeFgNFGm8tLT3mq1RCaZRBP4Cc
 
 
 

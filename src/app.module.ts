@@ -5,6 +5,10 @@ import { MoviesModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { CacheModule } from '@nestjs/cache-manager';
+import { redisStore } from 'cache-manager-redis-yet';
+import { ConfigModule } from '@nestjs/config';
+import config from './config';
 
 @Module({
   imports: [
@@ -21,6 +25,15 @@ import { UserModule } from './user/user.module';
     MoviesModule,
     AuthModule,
     UserModule,
+    ConfigModule.forRoot({
+      load: [config],
+      isGlobal: true,
+    }),
+    CacheModule.register({
+      ttl: 60 * 1000,
+      isGlobal: true,
+      store: redisStore,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
