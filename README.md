@@ -24,7 +24,7 @@ importantes para rodar corretamente o projeto.
 
 1. Clone o repositório
 
-- `git clone https://github.com/Gabrielja2/fiter-back-end.git`
+- `git clone https://github.com/Gabrielja2/mks-backend.git`
 
 2. Entre na pasta do repositório que você acabou de clonar:
 
