@@ -3,15 +3,11 @@ import 'dotenv/config';
 export const JWT_SECRET = process.env.JWT_SECRET as string;
 export const JWT_EXPIRE_IN_SECONDS = Number(process.env.JWT_EXPIRE_IN_SECONDS);
 
-export const REDIS_HOST = process.env.REDIS_HOST as string;
-export const REDIS_PORT = Number(process.env.REDIS_PORT);
+export const DB_TYPE = process.env.DB_TYPE;
+export const DB_HOST = process.env.DB_HOST;
+export const DB_PORT = process.env.DB_PORT;
+export const DB_USERNAME = process.env.DB_USERNAME;
+export const DB_PASSWORD = process.env.DB_PASSWORD;
+export const DB_DATABASE = process.env.DB_DB;
 
-export const DATABASE_URL = process.env.DATABASE_URL as string;
-
-export const POSTGRES_USER = process.env.POSTGRES_USER as string;
-export const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD as string;
-export const POSTGRES_DB = process.env.POSTGRES_DB as string;
-export const POSTGRES_PORT = Number(process.env.POSTGRES_PORT);
-export const POSTGRES_HOST = process.env.POSTGRES_HOST as string;
-
-export const PORT = Number(process.env.PORT);
+export const PORT = process.env.PORT;

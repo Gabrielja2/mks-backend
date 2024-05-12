@@ -4,33 +4,28 @@ import { MoviesModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { CacheModule } from '@nestjs/cache-manager';
-import { redisStore } from 'cache-manager-redis-yet';
-import {
-  POSTGRES_DB,
-  POSTGRES_HOST,
-  POSTGRES_PASSWORD,
-  POSTGRES_USER,
-} from './shared';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: POSTGRES_HOST,
-      database: POSTGRES_DB,
-      username: POSTGRES_USER,
-      password: POSTGRES_PASSWORD,
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: false,
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        type: 'postgres',
+        host: configService.get<string>('DB_HOST'),
+        port: configService.get<number>('DB_PORT'),
+        username: configService.get<string>('DB_USERNAME'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_DATABASE'),
+        entities: ['dist/**/*.entity{.ts,.js}'],
+        synchronize: true,
+      }),
+      inject: [ConfigService],
     }),
-    MoviesModule,
     AuthModule,
     UserModule,
-    CacheModule.register({
-      isGlobal: true,
-      store: redisStore,
-    }),
+    MoviesModule,
   ],
   providers: [AppService],
 })
