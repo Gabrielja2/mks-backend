@@ -37,11 +37,8 @@ importantes para rodar corretamente o projeto.
 4. Configure as variáveis de ambiente, é <strong>Obrigatório</strong> para
    funcionar corretamente:
 
-- Confira o arquivo .env na raiz do projeto e preencha com as variáveis de
-  ambiente caso seja necessário, mas ja vou deixar elas preenchidas nesse
-  exemplo, lembre que é obrigatório algumas dessas váriaveis para conseguir
-  rodar o servidor como PORT, eu utilizei a PORT=`3000` mas pode ser qualquer
-  uma que não esteja sendo usada na sua máquina, vou deixa um arquivo env.ts preenchido para utilizar o no .env
+- Crie um arquivo .env na raiz do projeto e preencha com as variáveis de
+  ambiente do .env.example.
 
 6. Dentro do diretório MKS-BACKEND, abra um terminal, suba o
    docker-compose que o projeto vai iniciar:
@@ -152,7 +149,7 @@ São as rotas para logar ou registrar um novo usuário
   </details><br />
 
 <details>
-<summary><strong>Rota de esclusão de um filme</strong></summary>
+<summary><strong>Rota de exclusão de um filme</strong></summary>
 
 - Método: DELETE
 - URL: https://mks-backend-n9zl.onrender.com/movies/:id
