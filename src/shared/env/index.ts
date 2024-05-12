@@ -12,3 +12,7 @@ export const DB_DATABASE = process.env.DB_DB;
 
 export const PORT = process.env.PORT;
 export const NODE_ENV = process.env.NODE_ENV;
+
+export const REDIS_URL = process.env.REDIS_URL;
+export const REDIS_HOST = process.env.REDIS_HOST;
+export const REDIS_PORT = process.env.REDIS_PORT;

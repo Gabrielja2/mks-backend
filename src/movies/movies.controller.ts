@@ -8,6 +8,7 @@ import {
   Patch,
   Inject,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import {
   ICreateMovieUseCase,
@@ -19,7 +20,9 @@ import {
 import { CreateMovieDto, UpdateMovieDto } from './dto';
 import { JwtGuard } from '@/auth/jwt-guard';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CacheInterceptor, CacheTTL, CacheKey } from '@nestjs/cache-manager';
 
+@UseInterceptors(CacheInterceptor)
 @UseGuards(JwtGuard)
 @ApiResponse({ status: 401, description: 'Unauthorized request' })
 @ApiTags('movies')
@@ -44,6 +47,8 @@ export class MoviesController {
     return this.createMovieUseCase.execute(createMovieDto);
   }
 
+  @CacheTTL(6 * 1000)
+  @CacheKey('movies')
   @ApiResponse({ status: 404, description: 'Not found request' })
   @Get()
   findAll() {
