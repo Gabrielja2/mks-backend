@@ -10,7 +10,7 @@ dos casos de uso em use-cases (apesar de não ter separdo em intenções menores
 
 Sou desenvolvedor com pouco mais de 2 anos de estudos e 6 meses de experiência de mercado como dev back-end. Referente as tecnologias utilizadas nesse projeto, possuo mais de 1 ano praticando projetos em nestjs, nodejs, expressjs, postgres, typeORM, inclusive são tecnologias que utilizei bastante no meu último trabalho como dev.
 
-Infelizmente ficou pendente o deploy e criar alguns testes para aprensentar, devido ao tempo, fui ver a mensagem do desafio no dia 10/05, ontem.... acabei ficando com o tempo curto, mas criar tests é algo que sempre pratiquei, inclusive gosto bastante de testar minhas aplicações backend e seguir boas práticas de desenvolvimento.
+Infelizmente ficou pendente criar alguns testes para aprensentar, devido ao tempo, fui ver a mensagem do desafio no dia 10/05, ontem.... acabei ficando com o tempo curto, mas criar tests é algo que sempre pratiquei, inclusive gosto bastante de testar minhas aplicações backend e seguir boas práticas de desenvolvimento.
 
 # Orientações
 
@@ -44,11 +44,9 @@ importantes para rodar corretamente o projeto.
   uma que não esteja sendo usada na sua máquina, vou deixa um arquivo env.ts preenchido para utilizar o no .env
 
 6. Dentro do diretório MKS-BACKEND, abra um terminal, suba o
-   docker-compose e depois no mesmo terminal rode o projeto:
+   docker-compose que o projeto vai iniciar:
 
-- `docker-compose up`
-
-- `npm run start:dev`
+- `docker-compose up --build`
 
 </details><br />
 
@@ -62,7 +60,7 @@ Rota com todas as informações dos endpoints, requests e responses.
 <summary><strong>Rota do Swagger</strong></summary>
 
 - Método: POST
-- URL: http://localhost:3000/api
+- URL: https://mks-backend-n9zl.onrender.com/api
 - Descrição: Informações com todos os endpoints da API.
 
   </details><br />
@@ -75,7 +73,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de Login</strong></summary>
 
 - Método: POST
-- URL: http://localhost:3000/auth
+- URL: https://mks-backend-n9zl.onrender.com/auth
 - Descrição: Realiza o login de um usuário cadastrado.
 - Parâmetros de entrada:
   - email: String (obrigatório) - E-mail do usuário.
@@ -89,7 +87,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de Registro</strong></summary>
 
 - Método: POST
-- URL: http://localhost:3000/users
+- URL: https://mks-backend-n9zl.onrender.com/users
 - Descrição: Registra um novo usuário.
 - Parâmetros de entrada:
   - name: String (obrigatório) - Nome do usuário.
@@ -106,7 +104,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de Registro de um filme</strong></summary>
 
 - Método: POST
-- URL: http://localhost:3000/movies
+- URL: https://mks-backend-n9zl.onrender.com/movies
 - Descrição: Registra um novo filme.
 - Exemplo dos parâmetros de entrada: {
   "name": "nome",
@@ -122,7 +120,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de busca de um filme</strong></summary>
 
 - Método: GET
-- URL: http://localhost:3000/movies/:id
+- URL: https://mks-backend-n9zl.onrender.com/movies/:id
 - Descrição: Listaum filme.
 - Resposta de sucesso:
   - Código: 200
@@ -133,7 +131,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de busca de varios filmes</strong></summary>
 
 - Método: GET
-- URL: http://localhost:3000/movies
+- URL: https://mks-backend-n9zl.onrender.com/movies
 - Descrição: Lista as configurações do sorteio.
 - Resposta de sucesso:
 
@@ -145,7 +143,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de atualização de um filme</strong></summary>
 
 - Método: PATCH
-- URL: http://localhost:3000/movies/:id
+- URL: https://mks-backend-n9zl.onrender.com/movies/:id
 - Descrição: Atualiza um filme.
 - Resposta de sucesso:
 
@@ -157,7 +155,7 @@ São as rotas para logar ou registrar um novo usuário
 <summary><strong>Rota de esclusão de um filme</strong></summary>
 
 - Método: DELETE
-- URL: http://localhost:3000/movies/:id
+- URL: https://mks-backend-n9zl.onrender.com/movies/:id
 - Descrição: Deleta um filme.
 - Resposta de sucesso:
 
